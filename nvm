@@ -1,0 +1,32 @@
+# Install NVM
+
+`root`
+```
+# git clone git@github.com:creationix/nvm.git /opt/nvm
+# mkdir /usr/local/nvm
+# mkdir /usr/local/node
+# nano /etc/profile.d/nvm.sh
+```
+
+```vim
+export NVM_DIR=/usr/local/nvm
+source /opt/nvm/nvm.sh
+
+export NPM_CONFIG_PREFIX=/usr/local/node
+export PATH="/usr/local/node/bin:$PATH"
+```
+
+Re-login to a shell session, then set the default node version.
+
+`root`
+```
+# nvm install 10.16.3
+# nvm alias default 10.16.3
+
+# exit
+```
+
+`user`
+```
+source /etc/profile.d/nvm.sh
+```
